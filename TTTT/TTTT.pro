@@ -13,12 +13,9 @@ TEMPLATE = app
 
 INCLUDEPATH += $$PWD/..
 
-win32 {
-    debug:DESTDIR = ../debug/
-    release:DESTDIR = ../release/
-} else {
-    DESTDIR = ../
-}
+debug:DESTDIR = ../debug/
+release:DESTDIR = ../release/
+
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
