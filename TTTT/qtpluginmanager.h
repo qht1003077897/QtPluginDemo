@@ -42,7 +42,8 @@ private:
     QtPluginsManager()
     {
      d = new QtPluginsManagerPrivate;
-    };
+    }
+    
     QtPluginsManagerPrivate *d;
 };
 
