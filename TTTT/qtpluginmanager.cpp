@@ -22,12 +22,12 @@ void QtPluginsManager::loadAllPlugins()
     // 初始化插件中的元数据
     foreach (QFileInfo info, path.entryInfoList(QDir::Files | QDir::NoDotAndDotDot))
     {
-            scan(info.absoluteFilePath());
+        scan(info.absoluteFilePath());
     }
     // 加载插件
     foreach (QFileInfo info, path.entryInfoList(QDir::Files | QDir::NoDotAndDotDot))
     {
-            loadPlugin(info.absoluteFilePath());
+        loadPlugin(info.absoluteFilePath());
     }
 }
 
@@ -122,8 +122,8 @@ void QtPluginsManager::initSignalAndSlot()
     auto plugins = allPlugins();
     foreach (auto loader, plugins)
     {
-    // 每个插件发送消息到manager，然后由manager 根据 dest 字段转发
-    connect(loader->instance(),SIGNAL(sendMsg2Manager(PluginMetaData)),this,SLOT(recMsgfromPlugin(PluginMetaData)));
+        // 每个插件发送消息到manager，然后由manager 根据 dest 字段转发
+        connect(loader->instance(),SIGNAL(sendMsg2Manager(PluginMetaData)),this,SLOT(recMsgfromPlugin(PluginMetaData)));
     }
 }
 

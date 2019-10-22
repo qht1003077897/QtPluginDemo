@@ -19,12 +19,12 @@ void PluginA::clickOpenImg()
 
 void PluginA::click2Animation()
 {
-        PluginMetaData metadata;
-        metadata.from = "pluginA";
-        metadata.dest = "pluginB";
-        metadata.type = 1;
-        metadata.object = ui->label;
-        emit sendMsg2Manager(metadata);
+    PluginMetaData metadata;
+    metadata.from = "pluginA";
+    metadata.dest = "pluginB";
+    metadata.type = 1;
+    metadata.object = ui->label;
+    emit sendMsg2Manager(metadata);
 }
 
 void PluginA::recMsgfromManager(PluginMetaData metedata)

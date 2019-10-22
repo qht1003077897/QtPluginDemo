@@ -17,6 +17,6 @@ public:
 signals:
     void sendMsg2Manager(PluginMetaData) Q_DECL_OVERRIDE;
 public slots:
-     void animation(QWidget*);
+    void animation(QWidget*);
 };
 

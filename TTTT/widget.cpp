@@ -17,7 +17,8 @@ Widget::~Widget()
 
 void Widget::clickA()
 {
-   QPluginLoader *loader =  QtPluginsManager::getInstance().getPlugin("pluginA");
+    QPluginLoader *loader =  QtPluginsManager::getInstance()->getPlugin("pluginA");
+
     if(loader)
     {
         auto obj = loader->instance();
@@ -29,7 +30,7 @@ void Widget::clickA()
     }
     else
     {
-     qDebug() << "未能找到插件A";
+        qDebug() << "未能找到插件A";
     }
 }
 
