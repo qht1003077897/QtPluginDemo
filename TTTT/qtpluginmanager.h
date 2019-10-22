@@ -12,11 +12,15 @@ class  QtPluginsManager : public QObject
     Q_OBJECT
 
 public:
-    static QtPluginsManager &getInstance()
+    static QtPluginsManager *getInstance()
     {
-        static QtPluginsManager m_instance;
+        if(m_instance == Q_NULLPTR) {
+            m_instance = new QtPluginsManager();
+        }
+
         return m_instance;
     }
+
 public:
     QDir getPluginPath();
     //加载所有插件
@@ -35,14 +39,18 @@ public:
     QPluginLoader* getPlugin(const QString &name);
     //初始化和插件通信的信号槽
     void initSignalAndSlot();
+
 public slots:
     //接受来自各插件的消息
     void recMsgfromPlugin(PluginMetaData);
+
 private:
     QtPluginsManager()
     {
-     d = new QtPluginsManagerPrivate;
-    };
+        d = new QtPluginsManagerPrivate;
+    }
+
     QtPluginsManagerPrivate *d;
+    static QtPluginsManager *m_instance;
 };
 

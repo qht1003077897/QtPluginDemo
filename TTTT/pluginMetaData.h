@@ -15,5 +15,5 @@ struct PluginMetaData
     QMap<QString,QVariant> map;
     QObject *object = nullptr;
 };
-Q_DECLARE_METATYPE(PluginMetaData);
+Q_DECLARE_METATYPE(PluginMetaData)
 
